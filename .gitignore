@@ -8,3 +8,5 @@ convex/_generated
 *.tsbuildinfo
 coverage
 .claude/
+test-results
+playwright-report

@@ -20,6 +20,8 @@ export function Footer({ config, whatsappLink }: Props) {
               </a>
             </>
           )}
+          <span className="dotsep">·</span>
+          <a href="/review/">Leave a review</a>
         </div>
         <div className="legal">
           © {new Date().getFullYear()} · Popoyo, Nicaragua

@@ -6,6 +6,7 @@ import { PackagesSection } from "./components/PackagesSection";
 import { HowItWorks } from "./components/HowItWorks";
 import { BookingSection } from "./components/BookingSection";
 import { ServiceArea } from "./components/ServiceArea";
+import { Reviews } from "./components/Reviews";
 import { Faq } from "./components/Faq";
 import { Footer } from "./components/Footer";
 import { emptySelection, buildWhatsAppLink } from "./lib/booking";
@@ -64,6 +65,7 @@ export default function App() {
           setSelection={setSelection}
         />
         <ServiceArea config={config} />
+        <Reviews />
         <Faq />
       </main>
       <Footer config={config} whatsappLink={headerWaLink} />
