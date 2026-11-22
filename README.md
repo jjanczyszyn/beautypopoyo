@@ -98,6 +98,32 @@ beauty   CNAME   <your-github-username>.github.io.
 Wait for DNS to propagate, then in **Settings → Pages** verify the custom
 domain and check **Enforce HTTPS**.
 
+## Reviews
+
+Customers leave a review at **beauty.popoyo.co/review** (stars, words, name; no
+account). It goes to the Convex backend of
+[motopopoyo](https://github.com/jjanczyszyn/motopopoyo) (`beautyReviews` table),
+where an owner publishes it at moto.popoyo.co/admin → More → Beauty reviews.
+Published ones show on the home page. If sending fails, the page offers
+WhatsApp. When the Google profile is verified, set `GOOGLE_REVIEW_URL` in
+`src/lib/reviews.ts` and the thank-you screen also offers Google to everyone.
+
+```mermaid
+flowchart LR
+  C[Customer] -->|/review| B[beauty.popoyo.co<br/>GitHub Pages]
+  B -->|submit| X[(Convex: motopopoyo<br/>beautyReviews)]
+  O[Karen / JJ] -->|publish or hide| A[moto.popoyo.co/admin]
+  A --> X
+  X -->|published| B
+```
+
+Cost: none (GitHub Pages, and within Convex's free tier).
+
+## Tests
+
+`npm test` (unit) and `npm run test:e2e` (Playwright, desktop and iPhone; the
+backend is mocked, nothing is written). CI runs both on every pull request.
+
 ## Launch checklist
 
 The owner should review/replace:

@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && mkdir -p dist/review && cp dist/index.html dist/review/index.html",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "convex:dev": "convex dev",
     "convex:deploy": "convex deploy",
-    "convex:seed": "convex run seed:all"
+    "convex:seed": "convex run seed:all",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "convex": "^1.37.0",
@@ -18,11 +20,13 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.1",
     "@types/node": "^22.10.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.6.3",
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "vitest": "^2.1.9"
   }
 }
